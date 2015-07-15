@@ -1,5 +1,6 @@
 (function($) {
 	dm.componentFactory("border", function($) {
+		console.log(arguments);
 		var border = function (options) {
 			var defaults = {
 				borderColor: "#000",
@@ -55,5 +56,5 @@
 		
 		return border;
 		
-	}, null, jQuery);
+	}, null, [jQuery]);
 })(jQuery);
