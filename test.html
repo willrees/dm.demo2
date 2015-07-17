@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-                <meta charset="UTF-8">
-                <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
 <body>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec metus nunc. Suspendisse et maximus elit. Cras mauris tortor, convallis ac dui in, faucibus sagittis massa. Mauris quis molestie eros, id accumsan metus. Nunc viverra pharetra neque, dapibus suscipit lectus scelerisque non. Aliquam non consectetur ante, tristique congue mi. Nam luctus maximus ultrices. Integer ut urna id orci fermentum sollicitudin et in felis. Morbi interdum, tortor a ullamcorper mollis, mauris tortor pretium erat, a vehicula justo ante id augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum eu magna non blandit. In pellentesque mauris lectus, vitae auctor eros ultricies sit amet. Duis id mi lobortis, volutpat nisl quis, porta magna.</p>
-                <button id="Blink1">Blink</button>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec metus nunc. Suspendisse et maximus elit. Cras mauris tortor, convallis ac dui in, faucibus sagittis massa. Mauris quis molestie eros, id accumsan metus. Nunc viverra pharetra neque, dapibus suscipit lectus scelerisque non. Aliquam non consectetur ante, tristique congue mi. Nam luctus maximus ultrices. Integer ut urna id orci fermentum sollicitudin et in felis. Morbi interdum, tortor a ullamcorper mollis, mauris tortor pretium erat, a vehicula justo ante id augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum eu magna non blandit. In pellentesque mauris lectus, vitae auctor eros ultricies sit amet. Duis id mi lobortis, volutpat nisl quis, porta magna.</p>
-                <button id="Blink2">Blink</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec metus nunc. Suspendisse et maximus elit. Cras mauris tortor, convallis ac dui in, faucibus sagittis massa. Mauris quis molestie eros, id accumsan metus. Nunc viverra pharetra neque, dapibus suscipit lectus scelerisque non. Aliquam non consectetur ante, tristique congue mi. Nam luctus maximus ultrices. Integer ut urna id orci fermentum sollicitudin et in felis. Morbi interdum, tortor a ullamcorper mollis, mauris tortor pretium erat, a vehicula justo ante id augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum eu magna non blandit. In pellentesque mauris lectus, vitae auctor eros ultricies sit amet. Duis id mi lobortis, volutpat nisl quis, porta magna.</p>
+        <button id="Blink1">Blink</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec metus nunc. Suspendisse et maximus elit. Cras mauris tortor, convallis ac dui in, faucibus sagittis massa. Mauris quis molestie eros, id accumsan metus. Nunc viverra pharetra neque, dapibus suscipit lectus scelerisque non. Aliquam non consectetur ante, tristique congue mi. Nam luctus maximus ultrices. Integer ut urna id orci fermentum sollicitudin et in felis. Morbi interdum, tortor a ullamcorper mollis, mauris tortor pretium erat, a vehicula justo ante id augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum eu magna non blandit. In pellentesque mauris lectus, vitae auctor eros ultricies sit amet. Duis id mi lobortis, volutpat nisl quis, porta magna.</p>
+        <button id="Blink2">Blink</button>
+       
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="/dm.core/scripts/dist/dm.core.js"></script>                
+        <script src="scripts/dist/dm.border.js"></script>
+        <script>
+            dm.bind();
+                                   
+            var first = dm('p:first').border();
+            var last = dm('p:last').border({
+                borderColor: "red",
+                borderWidth: "10px"
+            });
+           
+            $(function () {
+                $('#Blink1').on('click', function () {
+                                first.blink();
+                });
                
-                <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-                <script src="/dm.core/scripts/dist/dm.core.js"></script>                
-                <script src="scripts/dist/dm.border.js"></script>
-                <script>
-                                dm.bind({
-                                    featureDetection: {
-                                        enabled: true
-                                    }
-                                });
-                               
-                                var first = dm('p:first').border();
-                                var last = dm('p:last').border({
-                                                borderColor: "red",
-                                                borderWidth: "10px"
-                                });
-                               
-                                $(function () {
-                                                $('#Blink1').on('click', function () {
-                                                                first.blink();
-                                                });
-                                               
-                                                $('#Blink2').on('click', function () {
-                                                                last.blink();
-                                                });
-                                })
-                </script>
+                $('#Blink2').on('click', function () {
+                                last.blink();
+                });
+            })
+        </script>
 </body>
 </html>
